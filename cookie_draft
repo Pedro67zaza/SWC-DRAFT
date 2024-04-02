@@ -1,0 +1,51 @@
+/*
+	PROGRAMMERS : AFIZUDIN, ARYAN, AINOL, RIFAT, AMIN
+	GROUP : 4
+	SUBJECT : FUNDAMENTALS OF PROGRAMMING (SWC1323)
+	LECTURER : MDM SITI ROBAYA
+	PROGRAM PURPOSE : to manage the sales of cookies for the Hari Raya Aidilfitri celebration. This program will assist the company in recording and managing
+					  sales data, including types of cookies sold, quantities, prices, and customer information.
+*/
+
+//Proprocessor directive
+#include <iostream>
+#include <limits>
+using namespace std;
+
+//Declaration of arrays
+const int TRANSACTION_CAPACITY = 50;
+int transactionNo[TRANSACTION_CAPACITY], quantitySold[TRANSACTION_CAPACITY];
+double pricePerUnit[TRANSACTION_CAPACITY];
+string cookieType[TRANSACTION_CAPACITY], customerName[TRANSACTION_CAPACITY];
+
+//Function prototype
+void recordSales();
+
+//main function
+int main()
+{	
+	recordSales();//function call
+	
+	return 0;
+}
+
+void recordSales()
+{	
+	int amount;
+	
+	cout << "Enter the amount of customers: " << endl;
+	cin >> amount;
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	for(int i = 0; i < amount; i++)
+		{
+			cout << "Enter the customer's name: " << endl;
+			getline(cin, customerName[i]);
+			cout << "Enter the type of cookie sold: " << endl;
+			getline(cin, cookieType[i]);
+			cout << "State the quantity: " << endl;
+			cin >> quantitySold[i];
+			cout << "State the Price per unit (RM): " << endl;
+			cin >> pricePerUnit[i];
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		}
+}
